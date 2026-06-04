@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build active file",
+            "type": "process",
+            "command": "${workspaceFolder}\\.vscode\\build.cmd",
+            "args": [
+                "${file}",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "C/C++: g++.exe build active file",
+            "type": "process",
+            "command": "${workspaceFolder}\\.vscode\\build-run.cmd",
+            "args": [
+                "${file}",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compile the active C++ file with g++, then run it."
+        }
+    ]
+}
